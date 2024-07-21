@@ -7,6 +7,7 @@ with open('lctrncs.tex', 'r') as file:
 
 with open('config.yaml', 'r') as file:
     conf = yaml.safe_load(file)
+
 # Step 2: Manipulate the string
 tex_content = tex_content.replace('[company]', conf['company'])
 tex_content = tex_content.replace('[co]', conf['co'])
@@ -21,6 +22,7 @@ tex_content = tex_content.replace('[company address]', conf['company address'])
 tex_content = tex_content.replace('[City, State, Zip Code]',
                                   conf['City, State, Zip Code'])
 tex_content = tex_content.replace('[specific reason related to the company or position, e.g., innovative projects, company culture, industry leadership]', conf['reason'])
+
 # Step 3: Write back to the .tex file
 with open('example.tex', 'w') as file:
     file.write(tex_content)

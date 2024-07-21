@@ -44,11 +44,11 @@ scraper.on(Events.ERROR, on_error)
 scraper.on(Events.END, on_end)
 
 queries = [
-    Query(
-        options=QueryOptions(
-            limit=27  # Limit the number of jobs to scrape.
-        )
-    ),
+    #Query(
+    #    options=QueryOptions(
+    #        limit=27  # Limit the number of jobs to scrape.
+    #    )
+    #),
     Query(
         query='Engineer',
         options=QueryOptions(
@@ -60,11 +60,11 @@ queries = [
             filters=QueryFilters(
                 company_jobs_url='https://www.linkedin.com/jobs/search/?f_C=1441%2C17876832%2C791962%2C2374003%2C18950635%2C16140%2C10440912&geoId=92000000',  # Filter by companies.
                 relevance=RelevanceFilters.RECENT,
-                time=TimeFilters.MONTH,
+                time=TimeFilters.WEEK,
                 type=[TypeFilters.FULL_TIME, TypeFilters.INTERNSHIP],
-                on_site_or_remote=[OnSiteOrRemoteFilters.REMOTE],
-                experience=[ExperienceLevelFilters.MID_SENIOR],
-                base_salary=SalaryBaseFilters.SALARY_100K
+                #on_site_or_remote=[OnSiteOrRemoteFilters.REMOTE],
+                experience=[ExperienceLevelFilters.ENTRY_LEVEL],
+                #base_salary=SalaryBaseFilters.SALARY_100K
             )
         )
     ),
